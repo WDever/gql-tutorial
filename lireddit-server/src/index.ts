@@ -1,12 +1,18 @@
 import { MikroORM } from '@mikro-orm/core';
-import { __prod__ } from './constants';
+import mikroConfig from 'mikro-orm.config';
+import { Post } from './entities/Post';
 
 const main = async (): Promise<void> => {
-  const orm = MikroORM.init({
-    dbName: 'lireddit',
-    type: 'postgresql',
-    debug: !__prod__,
-  });
+  const orm = await MikroORM.init(mikroConfig);
+  await orm.getMigrator().up();
+
+  // const post = orm.em.create(Post, { title: 'my first post' });
+  // await orm.em.persistAndFlush(post);
+
+  // const posts = await orm.em.find(Post, {});
+  // console.log(posts);
 };
 
-main();
+main().catch((e) => {
+  console.error(e);
+});
