@@ -1,0 +1,44 @@
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint", "prettier"],
+  "extends": [
+    "airbnb-typescript/base",
+    "prettier/@typescript-eslint",
+    "prettier",
+    "plugin:prettier/recommended"
+  ],
+  "parserOptions": {
+    "project": "./lireddit-server/tsconfig.json"
+  },
+  "rules": {
+    "@typescript-eslint/explicit-function-return-type": 2,
+    "@typescript-eslint/typedef": [
+      "error",
+      {
+        // "arrayDestructuring": true,
+        "arrayDestructuring": false,
+        "arrowParameter": false,
+        "memberVariableDeclaration": true,
+        // "objectDestructuring": true,
+        "objectDestructuring": false,
+        "parameter": true,
+        "propertyDeclaration": true,
+        // "variableDeclaration": true
+        "variableDeclaration": false
+      }
+    ],
+    "@typescript-eslint/no-unused-vars": 1,
+    "@typescript-eslint/camelcase": 0,
+    "@typescript-eslint/no-empty-interface": 0,
+
+    "import/extensions": 2,
+    "consistent-return": 0,
+    "import/no-unresolved": 0,
+    "import/prefer-default-export": 0,
+    "max-classes-per-file": 0,
+    "no-shadow": 0,
+    "no-param-reassign": ["error", { "props": false }],
+    "no-alert": 0
+  }
+}
