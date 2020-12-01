@@ -9,7 +9,7 @@ import {
   Query,
 } from 'type-graphql';
 import { Context } from 'types';
-import { User } from 'entities/User';
+import { User } from 'entities/user';
 import argon2 from 'argon2';
 import { EntityManager } from '@mikro-orm/postgresql';
 import { COOKIE_NAME } from '../constants';

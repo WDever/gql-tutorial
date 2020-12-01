@@ -1,6 +1,6 @@
 import { Options } from '@mikro-orm/core';
 import path from 'path';
-import { User } from './entities/User';
+import { User } from './entities/user';
 import { Post } from './entities/post';
 import { __prod__ } from './constants';
 
