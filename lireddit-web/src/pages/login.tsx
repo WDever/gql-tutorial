@@ -16,14 +16,22 @@ export default function Login(): ReactElement {
       <Formik
         initialValues={{ username: '', password: '' }}
         onSubmit={async (values, { setErrors }): Promise<void> => {
-          const response = await login({ options: values });
+          const response = await login({
+            options: { username: '', password: '' },
+          });
 
-          if (response.data?.login.errors) {
-            setErrors(toErrorMap(response.data.login.errors));
-          } else if (response.data?.login.user) {
-            router.push('/');
-          }
+          console.log(response);
+          console.log(toErrorMap(response.data?.login.errors));
         }}
+        // onSubmit={async (values, { setErrors }): Promise<void> => {
+        //   const response = await login({ options: values });
+
+        //   if (response.data?.login.errors) {
+        //     setErrors(toErrorMap(response.data.login.errors));
+        //   } else if (response.data?.login.user) {
+        //     router.push('/');
+        //   }
+        // }}
       >
         {({ isSubmitting }): ReactNode => (
           <Form>

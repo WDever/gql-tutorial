@@ -1,7 +1,7 @@
 import { Options } from '@mikro-orm/core';
 import path from 'path';
 import { User } from './entities/User';
-import { Post } from './entities/Post';
+import { Post } from './entities/post';
 import { __prod__ } from './constants';
 
 const mikroConfig: Options = {
